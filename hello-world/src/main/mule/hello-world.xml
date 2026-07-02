@@ -10,6 +10,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="hello-worldFlow" doc:id="b79882b3-a6bf-42e4-b8f3-640337410f98" >
 		<http:listener doc:name="Listener" doc:id="3fa7a8ab-0d50-41a3-8fc8-a25148554fa7" config-ref="HTTP_Listener_config" path="/test"/>
 		<set-payload value='#["hello Mule World"]' doc:name="Set Payload" doc:id="1184f42f-7087-4521-b21f-511a70dc0cd9" />
-		<logger level="INFO" doc:name="Logger" doc:id="0c7f8fae-481c-4041-b8c2-e666b16cc1ce" message='#[payload]'/>
+		<logger level="INFO" doc:name="Logger" doc:id="0c7f8fae-481c-4041-b8c2-e666b16cc1ce" message='#[payload ++ "logging to check"]'/>
 	</flow>
 </mule>

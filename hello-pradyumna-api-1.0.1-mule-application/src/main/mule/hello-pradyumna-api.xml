@@ -16,6 +16,6 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<flow name="hello-pradyumna-apiFlow" doc:id="077a7d9a-cb72-4952-bc1c-a9bd18be6ee0" >
 		<http:listener doc:name="Listener" doc:id="8fe12eae-5f0e-4cf3-8e11-763a23f3bb0e" config-ref="HTTP_Listener_config" path="/test"/>
 		<set-payload value='#["hello every one Welcome to Mule world!!!!!!!"]' doc:name="Set Payload" doc:id="79ffd6c9-6b94-488b-bb7f-23e225dd7767" />
-		<logger level="INFO" doc:name="Logger" doc:id="2694be66-4025-48ff-a5cf-491dd04fe3f1" message="#[payload]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2694be66-4025-48ff-a5cf-491dd04fe3f1" message='#["hello"]'/>
 	</flow>
 </mule>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="cbb11788-7fbd-4194-abff-0a4f3cfb30c1" >
+		<http:listener-connection host="0.0.0.0" port="8081"/>
+	</http:listener-config>
+	<file:config name="File_Config" doc:name="File Config" doc:id="722c8f7c-712a-4349-bb75-ad979119d5fd" >
+		<file:connection workingDir="C:\Users\sandy\OneDrive\Documents" />
+	</file:config>
+	<flow name="hello-pradyumna-apiFlow" doc:id="077a7d9a-cb72-4952-bc1c-a9bd18be6ee0" >
+		<http:listener doc:name="Listener" doc:id="8fe12eae-5f0e-4cf3-8e11-763a23f3bb0e" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value='#["hello every one Welcome to Mule world!!!!!!!"]' doc:name="Set Payload" doc:id="79ffd6c9-6b94-488b-bb7f-23e225dd7767" />
+		<logger level="INFO" doc:name="Logger" doc:id="2694be66-4025-48ff-a5cf-491dd04fe3f1" message="#[payload]"/>
+	</flow>
+</mule>
